@@ -1,21 +1,18 @@
-import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import Tree from './components/Tree.jsx'
+import { Dashboard } from './components/Dashboard.jsx';
+import { useState } from 'react';
 
 
 function App() {
+  const [addingSavings, setAddingSavings] = useState(false);
   return (
     <div className='App'>
       <main>
-        the app
+        <Dashboard addingSavings={addingSavings} setAddingSavings={setAddingSavings} />
       </main>
       <aside>
-        <Tree></Tree>
+        <Tree addingSavings={addingSavings}></Tree>
       </aside>
     </div>
   )
