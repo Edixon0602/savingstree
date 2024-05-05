@@ -13,7 +13,7 @@ const TREES = {
 
 
 
-export default function Tree({addingSavings}) {
+export default function Tree({addingSavings, withdrawingSavings}) {
   const [tree, setTree] = useState(null);
   useEffect(() => {
     const savedAmount = db.getData("savings");
@@ -22,7 +22,7 @@ export default function Tree({addingSavings}) {
         setTree(TREES[key]);
       }
     }
-  }, [addingSavings])
+  }, [addingSavings, withdrawingSavings]);
 
   return (
     <>

@@ -1,3 +1,8 @@
+body {
+    background-color: #ffffff;
+    color: #000000;
+}
+
 #root {
     flex: 1;
     max-width: 1280px;
@@ -12,6 +17,12 @@
 .App main {
     flex: 1;
     padding: 0 10%;
+}
+
+.App aside {
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    flex: 1;
 }
 
 .savings {
@@ -31,4 +42,14 @@ form input {
 
 model-viewer {
     height: 400px;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .App {
+        flex-direction: column;
+    }
+    .savings {
+        flex-direction: column;
+    }
 }

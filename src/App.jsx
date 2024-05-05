@@ -6,13 +6,14 @@ import { useState } from 'react';
 
 function App() {
   const [addingSavings, setAddingSavings] = useState(false);
+  const [withdrawingSavings, setWithdrawingSavings] = useState(false);
   return (
     <div className='App'>
       <main>
-        <Dashboard addingSavings={addingSavings} setAddingSavings={setAddingSavings} />
+        <Dashboard addingSavings={addingSavings} setAddingSavings={setAddingSavings} withdrawingSavings={withdrawingSavings} setWithdrawingSavings={setWithdrawingSavings} />
       </main>
       <aside>
-        <Tree addingSavings={addingSavings}></Tree>
+        <Tree addingSavings={addingSavings} withdrawingSavings={withdrawingSavings}></Tree>
       </aside>
     </div>
   )
