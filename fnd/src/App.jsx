@@ -1,21 +1,22 @@
 import './App.css'
-import Tree from './components/Tree.jsx'
-import { Dashboard } from './components/Dashboard.jsx';
-import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Home } from './pages/Home';
+import { Login } from './pages/Login';
+import { ProtectedRoute } from './components/utils/ProtectedRoute.jsx';
 
 
 function App() {
-  const [addingSavings, setAddingSavings] = useState(false);
-  const [withdrawingSavings, setWithdrawingSavings] = useState(false);
   return (
+    <BrowserRouter>
     <div className='App'>
-      <main>
-        <Dashboard addingSavings={addingSavings} setAddingSavings={setAddingSavings} withdrawingSavings={withdrawingSavings} setWithdrawingSavings={setWithdrawingSavings} />
-      </main>
-      <aside>
-        <Tree addingSavings={addingSavings} withdrawingSavings={withdrawingSavings}></Tree>
-      </aside>
+      <Routes>
+        <Route element={<ProtectedRoute canAccess={false} redirectTo={'/login'} />}>
+          <Route path='' element ={<Home />} />
+        </Route>
+        <Route path='/login' element ={<Login />} />
+      </Routes>
     </div>
+    </BrowserRouter>
   )
 }
 

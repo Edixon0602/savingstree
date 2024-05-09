@@ -15,7 +15,7 @@ const TREES = {
   //600 : "src/assets/models/japanese_maple_tree.glb",
 }
 
-export default function Tree({addingSavings, withdrawingSavings}) {
+export function Tree({addingSavings, withdrawingSavings}) {
   const [tree, setTree] = useState(null);
   useEffect(() => {
     const savedAmount = db.getData("savings");
